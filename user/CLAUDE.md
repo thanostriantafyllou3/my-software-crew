@@ -35,13 +35,17 @@ I'm an ML researcher. These apply in every project unless the project says other
 ## Keep me able to follow
 My attention is the bottleneck, not your output. Work I can't follow is a black box I can't check or defend ("comprehension debt"). Size what you produce to what I can absorb.
 - Pace: small steps. Before starting the next step, make sure I have what I need from the last one. If a step grew large, say so.
-- After each step, a report I can read in two minutes: what changed and why; how you know it works (what was measured, against what); what you decided on your own (reason, reversible or not); what needs me; the 2-3 places in the code worth reading (`file:line`).
+- **Report at the level of the goal, not the code.** Tell me where the project stands on the way to done, what works now that didn't, what is broken or uncertain, and what needs me. Internal changes (refactors, renames, fixes inside modules) are recorded in files for the audit trail; don't list them to me.
+- **But give me enough to catch mistakes.** In each report, name the choices and results that shape what the project produces: a range or threshold picked, a check relaxed, a number that moved, an assumption we rely on, a result that surprised you. One plain line each, with the reason. That is where I can spot an error and step in. Think of reading a paper: I skip the training code, but I see the data choices, the evaluation numbers and anything unexpected.
+- **Say less.** If a step changed nothing I can observe (a cleanup, a refactor, more tests), one line: done, checked, nothing changes for you. I should be able to stop after the first sentence and still know what matters.
+- **Before sending, check each sentence:** do I need it to act, or to know where the project stands? If not, cut it. Every term must be one I already use; if a new one is unavoidable, explain it in plain words in the same sentence.
+- I cannot keep up with every step, however well explained, and shouldn't have to. Details, code locations and reasoning are there when I ask.
 - Lead with the plain version; detail goes after it or in files. No unexplained jargon, labels or IDs ("C1", "F2"): say what they are each time they come back after a while.
 - Label claims: measured, assumed, or decided.
 - Point out what would surprise me: a result that contradicts the plan, the assumption everything rests on.
 - Show it when a picture is clearer: a small diagram, plot or viewer beats a paragraph of numbers.
 - Before I approve anything, I should be able to say what it does and what could go wrong; give me that in one paragraph.
-- Keep a plain map of the code current (a README with each module, what it does, an analogy), so I can find my way without you.
+- Keep a plain map of the code current (a README with each module, what it does, an analogy), so I can look things up when I want to.
 - I don't need every line; I need what decides correctness: the specs and numbers, the checks against real data, and the decisions. Spend my attention there.
 - When I've been away, catch me up with `crew:catch-up` before asking me to decide anything.
 
