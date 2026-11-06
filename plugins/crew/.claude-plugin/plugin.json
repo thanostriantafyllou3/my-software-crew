@@ -1,0 +1,8 @@
+{
+  "name": "crew",
+  "version": "0.2.0",
+  "description": "A planning and review crew for coding agents: plan loop with an adversary, three-way code review, resume and catch-up that keep the human able to follow",
+  "author": {
+    "name": "Thanos Triantafyllou"
+  }
+}

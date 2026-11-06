@@ -1,0 +1,14 @@
+{
+  "name": "my-software-crew",
+  "description": "Thanos's planning and review crew for Claude Code",
+  "owner": {
+    "name": "Thanos Triantafyllou"
+  },
+  "plugins": [
+    {
+      "name": "crew",
+      "source": "./plugins/crew",
+      "description": "Planner, adversary and reviewer roles with the skills that run them"
+    }
+  ]
+}
