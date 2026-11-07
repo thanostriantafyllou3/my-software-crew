@@ -9,7 +9,7 @@ A plan written and checked by the same mind keeps its blind spots. Here a planne
 
 ## Setup
 
-- `PLAN.md` and `MESSAGEBOARD.md` in the project or sub-project folder; if missing, copy them from this skill's `templates/` folder.
+- `PLAN.md`, `MESSAGEBOARD.md` and `AGENT-LOG.md` in the project or sub-project folder; if missing, copy them from this skill's `templates/` folder.
 - Gather what the plan depends on first, from two directions, in parallel where possible:
   - **Inside (what already exists):** one `investigator` agent per part the plan touches (codebase, data, infrastructure, past runs), each writing `notes/<topic>.md` with sources; measure what can be measured. Small and familiar: read it yourself.
   - **Outside (what others do):** the `prior-art` skill, where the problem has likely been solved elsewhere.

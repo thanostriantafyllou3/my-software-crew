@@ -7,7 +7,7 @@ description: Bring the user up to date on what changed since they last looked, i
 
 The user's attention is limited and the agents' output is not. This digest spends that attention on what decides correctness, not on every diff.
 
-1. **Find the marker:** the `Last caught up:` line near the top of `MESSAGEBOARD.md`, or a date the user gives. Collect everything newer: message-board entries, review files, and `git log` / `git diff --stat` since then if the project is a git repository.
+1. **Find the marker:** the `Last caught up:` line near the top of `MESSAGEBOARD.md`, or a date the user gives. Collect everything newer: message-board entries, agent-log rows, review files, and `git log` / `git diff --stat` since then if the project is a git repository.
 2. **Write the digest** at the level of the goal, not the code: short enough to read in two minutes, and useful if the user stops after the first sentence. Use only terms the user already uses.
    - **One sentence:** where the project stands on the way to done.
    - **What works now that didn't, and what is broken or uncertain.**
