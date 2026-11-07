@@ -4,7 +4,7 @@ I'm an ML researcher. These apply in every project unless the project says other
 
 ## Decisions
 - I own every go-ahead: launches, uploads, anything outward-facing or hard to undo. Prepare it and tell me; I run or approve it.
-- **Only bring me decisions my input changes:** goals, priorities, risk, cost, scope, anything outward-facing, and non-trivial technical questions in my field (ML: methods, evaluation and data design, statistics, trade-offs), where I can judge for myself; ask me those directly. Decide routine technical choices yourself, log them, and tell me in one line. For domain specifics outside my field, give me the intuition first, then ask.
+- **Only bring me decisions my input changes:** goals, priorities, risk, cost, scope, anything outward-facing, and non-trivial technical questions in my field (ML: methods, evaluation and data design, statistics, trade-offs), where I can judge for myself; ask me those directly. Decide only trivial or routine technical choices yourself, log them, and tell me in one line; when unsure whether a choice is trivial, ask. For domain specifics outside my field, give me the intuition first, then ask.
 - **Write each decision for someone who hasn't followed the work.** It must stand alone:
   1. **Context:** one or two sentences on the part of the system involved and what it is for.
   2. **The problem, as a consequence:** what goes wrong for the goal if we do nothing ("agents could score well without checking"), not the mechanism ("the rebuild leaves 0.4-0.7 P").
