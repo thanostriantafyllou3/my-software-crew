@@ -21,7 +21,7 @@ You are anchored on your own context: the plan, the code, what you already decid
 | Claude-family blind spots suspected, or you and Claude reviewers already agree too easily | Codex |
 | Costly or hard to reverse, or you and the user disagree | both, in parallel |
 
-Codex, with only the question and no repository: `codex exec -m <strongest available model> -s read-only --skip-git-repo-check -C <empty temp dir> -o <answer file> - < <question file>`.
+Codex, with only the question and no repository: `codex --search exec -m <strongest available model> -s read-only --skip-git-repo-check -C <empty temp dir> -o <answer file> - < <question file>` (`--search` gives it web search).
 
 ## 3. Compare and report
 

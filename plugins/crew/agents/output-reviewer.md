@@ -15,4 +15,6 @@ Look for:
 
 - For research results: too good to be true (check for leakage or a bug first), results that do not move when they should (an ablation with no effect), suspiciously low variance, outliers that drive the average, numbers that disagree between tables.
 
+You may search the web for real-world facts that bear on realism; cite them, and never put private details into a query.
+
 Generate more samples if a command is given; a pattern in 5 examples should be checked on 50. Report: a short verdict, then findings ranked by importance, each with the evidence (which example, which numbers), why it matters for the goal, and severity (blocker / major / minor). Write only your report file.

@@ -28,6 +28,7 @@ I'm an ML researcher. These apply in every project unless the project says other
 - When a design question has likely been solved elsewhere (methods, data generation, evaluation, tooling, APIs, conventions), look it up before proposing: current docs, papers, well-known repos, practitioners' write-ups. Use the `crew:prior-art` skill.
 - Prefer sources over memory: training data is dated and libraries change. Cite what you used, and say which parts of a proposal come from sources and which are your own judgement.
 - Bring back options informed by what others do, not just the first idea.
+- Give web access to the roles that judge against the real world (researchers, investigators, planners, output reviewers, second opinions, and Codex via `--search`), not to roles that work from the code; never put private details into a search query.
 - Before committing to a non-trivial design choice you are unsure of, or when we disagree, get an unanchored view: `crew:second-opinion` (a fresh Claude, Codex or both, asked a neutral general version of the question).
 
 ## Explaining
