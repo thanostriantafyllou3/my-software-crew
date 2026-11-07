@@ -38,6 +38,8 @@ Review points, the same for research, production and side projects (each by a fr
 | Before sharing* | exactly what will be shared (paper, release, deploy, demo) and its evidence | unsupported claims, leaks, not reproducible, unstated limitations, ways to break it | `review-step` (release-reviewer) |
 | Real use* | logs or traces of real runs or users, and the goal | unearned success, failures that were not the user's fault, behaviour that shows the design is wrong | `review-step` (output-reviewer) |
 
+Atomic, then full: each part is reviewed on its own after each build step until it is solid; at milestones, a full review runs the whole system end to end and checks the seams between parts (two parts that each pass their own review can still disagree with each other).
+
 The checks on claims draw on the [NeurIPS paper checklist](https://neurips.cc/public/guides/PaperChecklist) (claims, limitations, reproducibility, error bars) and apply equally to a README's promises or a release's benchmark.
 
 Investigators are also used when something fails (a crashed run, a wrong result, a production incident): they reconstruct what happened from logs and find the cause before anyone fixes it. And when a decision needs a fact nobody has checked.
