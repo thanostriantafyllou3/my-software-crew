@@ -9,6 +9,7 @@ A small crew for Claude Code, for any project (research, production software, si
 | `crew:plan-loop` (skill) | Planner writes `PLAN.md`; a fresh adversary attacks it; revise until no blockers; open decisions go to the user as background / options / recommendation |
 | `crew:review-step` (skill) | After a build step: quality, robustness and plan-conformance reviewers in parallel; triage every finding (fix / decline / decide) and answer it |
 | `crew:prior-art` (skill) | Research current practice online (docs, papers, repos, write-ups) before proposing; bring back sourced options |
+| `crew:second-opinion` (skill) | Ask a fresh Claude, Codex or both a neutral version of a design question; compare with your own answer and say what changes |
 | `crew:catch-up` (skill) | What changed since the user last looked, in plain words sized to a few minutes: decisions made for them, what was measured, surprises, what needs them, where to read |
 | `crew:resume` (skill) | Pick up a project from its message board and plan, check they still hold, propose the next step |
 | `planner`, `plan-adversary`, `researcher`, `investigator` (agents) | The plan roles; a researcher looks outside (current practice online), an investigator looks inside (existing code, data, infrastructure, logs, failures), both read-only and citing sources |
@@ -68,6 +69,7 @@ A local-path marketplace loads in place: edits apply in the next session or afte
 - `/crew:prior-art` when a question has likely been solved elsewhere.
 - `/crew:plan-loop` before building anything non-trivial.
 - `/crew:review-step` after each build step and before shipping.
+- `/crew:second-opinion` before committing to a choice you are unsure of, or when you and the agent disagree.
 - `/crew:catch-up` after a break, or before deciding on work you haven't seen.
 - `/crew:resume` at the start of a session on an existing project.
 

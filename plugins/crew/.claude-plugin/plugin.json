@@ -1,6 +1,6 @@
 {
   "name": "crew",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A planning and review crew for any project (research, production, side projects): plan loop with an adversary, three-way code review, resume and catch-up that keep the human able to follow",
   "author": {
     "name": "Thanos Triantafyllou"
