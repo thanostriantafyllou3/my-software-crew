@@ -32,7 +32,7 @@ Give each the absolute paths, `STEP`, the test command, and the paths it must no
 
 ## After
 
-1. Read the reports. Triage each finding: **fix**, **decline** (with a reason), or **decide** (the user's call).
+1. Read the reports. Triage each finding: **fix**, **decline** (with a reason), or **decide** (the user's call). For every **fix**, name the re-check it leaves (a test, a gate, a coded strategy, or an item for the next reviewer's brief) and make the fix include it, so a fixed problem cannot quietly return.
 2. Fix the "fix" items yourself if they are few; otherwise commit (with the user's go-ahead) so the last commit is the snapshot, and launch one `refactorer` agent with the findings, your decision on each, the snapshot path, the test command, the bugs it may change behaviour for, and a response-file path. When it returns, read its diff yourself and confirm tests pass with unchanged tolerances.
 3. Write (or complete the refactorer's) `ROOT/reviews/REVIEW-N-RESPONSE.md`: one line per finding with its outcome.
 4. Log one entry on the message board: one plain sentence first, then step reviewed, counts, what changed, what is open.
