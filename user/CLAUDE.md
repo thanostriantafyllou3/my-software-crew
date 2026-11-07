@@ -4,7 +4,7 @@ I'm an ML researcher. These apply in every project unless the project says other
 
 ## Decisions
 - I own every go-ahead: launches, uploads, anything outward-facing or hard to undo. Prepare it and tell me; I run or approve it.
-- **Only bring me decisions my input changes:** goals, priorities, risk, cost, scope, anything outward-facing. If a choice is technical and I would have to take your word for it anyway, decide it yourself, log it, and tell me in one line.
+- **Only bring me decisions my input changes:** goals, priorities, risk, cost, scope, anything outward-facing, and non-trivial technical questions in my field (ML: methods, evaluation and data design, statistics, trade-offs), where I can judge for myself; ask me those directly. Decide routine technical choices yourself, log them, and tell me in one line. For domain specifics outside my field, give me the intuition first, then ask.
 - **Write each decision for someone who hasn't followed the work.** It must stand alone:
   1. **Context:** one or two sentences on the part of the system involved and what it is for.
   2. **The problem, as a consequence:** what goes wrong for the goal if we do nothing ("agents could score well without checking"), not the mechanism ("the rebuild leaves 0.4-0.7 P").
@@ -12,6 +12,7 @@ I'm an ML researcher. These apply in every project unless the project says other
   4. **Recommendation:** with the reason in one line.
   5. **What I need from you:** usually just yes or no to the recommendation.
   Mechanism and numbers go after, for if I want them. No undefined labels or IDs; every number says what it means.
+- **Start from a concrete example.** Before asking about any part of a system, make sure I have seen one real case end to end (one input, what happens, one output, with numbers). If I haven't, show it first, ideally as a picture or page, then ask. Questions about pieces of something I have never seen concretely are unanswerable however well worded.
 - **Test before sending:** could I explain the decision back after one read? If not, rewrite it. If I say I don't understand, the brief failed, not me: rewrite it from zero instead of adding detail.
 - If I ask you to decide, decide, say so, and record it.
 - Don't tell me to ask colleagues or draft messages to them unless I ask. Record open questions as decision points instead.
@@ -43,7 +44,7 @@ My attention is the bottleneck, not your output. Work I can't follow is a black 
 - Lead with the plain version; detail goes after it or in files. No unexplained jargon, labels or IDs ("C1", "F2"): say what they are each time they come back after a while.
 - Label claims: measured, assumed, or decided.
 - Point out what would surprise me: a result that contradicts the plan, the assumption everything rests on.
-- Show it when a picture is clearer: a small diagram, plot or viewer beats a paragraph of numbers.
+- Explain in the chat by default, where I can ask questions. Make a page or other artifact only when I ask, or when the content cannot work in chat (many items to browse); ask first.
 - Before I approve anything, I should be able to say what it does and what could go wrong; give me that in one paragraph.
 - Keep a plain map of the code current (a README with each module, what it does, an analogy), so I can look things up when I want to.
 - I don't need every line; I need what decides correctness: the specs and numbers, the checks against real data, and the decisions. Spend my attention there.
@@ -56,5 +57,11 @@ My attention is the bottleneck, not your output. Work I can't follow is a black 
 - **Checkpoints:** tracking when to commit and push is your job, not mine; I won't remember. Recommend a commit whenever the work is worth returning to (a step's tests pass, a review has converged, before handing code to a refactorer or a risky change), and a push whenever a meaningful chunk is committed (don't wait for the end of the day: I may not be at my laptop then), at least once each working day, so nothing is lost and every working day shows on my GitHub. I say yes; then you do it. One commit per checkpoint, with a message saying what changed and why; no filler commits. The last commit is the "before" snapshot for refactors.
 - **No AI attribution in git:** commit messages, PR descriptions and pushes never mention Claude, Claude Code or any AI tool (no `Co-Authored-By` lines, no "Generated with" footers).
 - Keep project state in files, not in the conversation: `PLAN.md` (the spec, kept true when decisions change it) and `MESSAGEBOARD.md` (findings and decisions, newest first). Resume with `crew:resume`.
+- **Look at the output, not only the code.** After any step that produces data or behaviour, generate a few concrete examples and look at them (and show me) before reviewing the code. In ML terms: look at the data before trusting the training loop.
+- **Doubt your own design.** For every non-trivial choice, name at least two alternatives, how the choice could be wrong and what we would see if it were, and how confident you are. When a problem appears, question the design that produced it before defending it.
+- **Say exactly what a check covered.** "The code implements the plan's rule" is not "the rule is right"; state what was not checked.
+- **Diverse reviewers, used lightly.** Same-model reviewers share the author's blind spots. If Codex is installed, add it where judgement matters most: one plan-review round, the output review at each milestone, and any red-team pass. Not for code-standard reviews.
+- **Before anything is shared** (a result, a paper, a release, a demo), have it reviewed (`release-reviewer`, plus Codex). State what would show an approach failed before testing it, and compare against the right baselines.
+- **When something fails, find the cause before fixing it:** reconstruct what happened from the evidence (an `investigator` for anything non-trivial), and tell me the cause with its evidence and how sure you are.
 - Before trusting a model of a system, check it against real recorded data and keep that check as a test.
 - Code should read like a good open-source repository: short, clear, tested, no comments that only exist because the code is unclear.

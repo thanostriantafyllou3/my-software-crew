@@ -10,13 +10,15 @@ A plan written and checked by the same mind keeps its blind spots. Here a planne
 ## Setup
 
 - `PLAN.md` and `MESSAGEBOARD.md` in the project or sub-project folder; if missing, copy them from this skill's `templates/` folder.
-- Gather what the plan depends on first: read the code, data and docs it touches; measure what can be measured. Write findings to `notes/` and one line each to the message board. A plan built on guesses gets reviewed into the ground.
-- Where the problem has likely been solved elsewhere, run the `prior-art` skill first and give the planner its notes.
+- Gather what the plan depends on first, from two directions, in parallel where possible:
+  - **Inside (what already exists):** one `investigator` agent per part the plan touches (codebase, data, infrastructure, past runs), each writing `notes/<topic>.md` with sources; measure what can be measured. Small and familiar: read it yourself.
+  - **Outside (what others do):** the `prior-art` skill, where the problem has likely been solved elsewhere.
+  Log one line per notes file on the message board, and give the planner the notes. A plan built on guesses gets reviewed into the ground.
 
 ## Rounds
 
 1. **Plan.** Launch the `planner` agent with: the goal in the user's words, constraints, the notes to read, and the files it may write (`PLAN.md`). Planning only.
-2. **Attack.** Launch a fresh `plan-adversary` agent with the same inputs plus `PLAN.md`. It writes `PLAN-REVIEW-<round>.md` with blockers, majors and minors, each with a concrete fix.
+2. **Attack.** Launch a fresh `plan-adversary` agent with the same inputs plus `PLAN.md`. It writes `PLAN-REVIEW-<round>.md` with blockers, majors and minors, each with a concrete fix. At least one round (usually the first) also runs the same brief through Codex if it is installed (`codex exec -m <strongest available model> -s read-only -C <repo> -o <report file> - < <brief file>`), written to `PLAN-REVIEW-<round>-CODEX.md`: another model family has different blind spots.
 3. **Revise.** Planner (or you) addresses every blocker and major: fix it, or record why not. Add a changelog entry at the top of `PLAN.md` mapping each finding to its fix.
 4. Repeat 2-3 until it converges: a round finds no blockers and no new majors (usually two or three rounds). If it has not converged after four rounds, stop and escalate to the user with what keeps coming back. Stop earlier if the remaining issues can only be settled by building or measuring; list them in the plan's "to settle by measurement" section instead.
 

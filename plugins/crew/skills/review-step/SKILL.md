@@ -20,8 +20,15 @@ Launch in one message, in the background:
 - `quality-reviewer` → `ROOT/reviews/QUALITY-REVIEW-N.md`
 - `robustness-reviewer` → `ROOT/reviews/ROBUSTNESS-REVIEW-N.md`
 - `conformance-reviewer` → `ROOT/reviews/CONFORMANCE-REVIEW-N.md` (skip if there is no plan or spec)
+- `output-reviewer` → `ROOT/reviews/OUTPUT-REVIEW-N.md` whenever the step produces data or behaviour: give it the goal in a few sentences and where the outputs are (or a command that prints samples), never the code or the plan
+- **Codex, where it pays (keep it light):** if Codex is installed, run the output review through it as well at each milestone (`codex exec -m <strongest available model> -s read-only -C <repo> -o <report file> - < <brief file>`, report `ROOT/reviews/CODEX-OUTPUT-REVIEW-N.md`), and use it for any red-team or "try to break it" pass. Quality, robustness and conformance reviews stay single-model: they check code against explicit standards, where a second model adds little.
 
 Give each the absolute paths, `STEP`, the test command, and the paths it must not open.
+
+## Later stages
+
+- **Before anything is shared** (a paper or preprint, a release, a deploy, a demo, a post): a `release-reviewer` on exactly what will be shared and the evidence behind it; and the same brief through Codex if installed. It checks that claims follow from the evidence, nothing leaks, someone else can reproduce or run it, limitations are stated, and it holds up when attacked.
+- **After real use** (experiment runs, users, production): the `output-reviewer` on logs or traces and their outcomes, with Codex if installed. Unearned successes, failures that were not the user's fault, results too good to be true, behaviour that shows the design is wrong. Findings feed the next iteration.
 
 ## After
 
